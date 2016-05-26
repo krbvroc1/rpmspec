@@ -2,7 +2,7 @@
 
 Name: dracut-crypt-ssh
 Version: 1.0.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 Summary: A dracut module that adds ssh to the boot image (also known as earlyssh)
 %if 0%{?fedora} || 0%{?rhel}
@@ -13,8 +13,8 @@ Group: System/Base
 %endif
 
 License: GPLv2+
-URL: https://github.com/dracut-crypt-ssh/dracut-crypt-ssh
-Source0: https://github.com/dracut-crypt-ssh/%{name}/archive/v%{version}.tar.gz
+URL: https://github.com/krbvroc1/dracut-crypt-ssh/dracut-crypt-ssh
+Source0: https://github.com/krbvroc1/dracut-crypt-ssh/%{name}/archive/v%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: dracut
@@ -84,6 +84,9 @@ rm -rf -- $RPM_BUILD_ROOT
 %{dracutlibdir}/modules.d/60crypt-ssh/helper/unlock-reap-success.sh
 
 %changelog
+* Sun May 25 2016 krbvroc1 - 1.0.3-2
+- Add DROPBEAR option
+
 * Sun Mar 06 2016 Robert Buchholz <rbu@fedoraproject.org> - 1.0.3-1
 - Upgrade to 1.0.3
 
